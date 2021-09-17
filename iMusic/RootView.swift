@@ -11,13 +11,13 @@ struct RootView: View {
     
     var body: some View {
         TabView {
-            SearchView(viewModel: TrackListViewModel())
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass.circle.fill")
                     Text("Search")
                 }
             
-            LibraryView(viewModel: TrackListViewModel(), track: TrackViewModel(tracks: MockData.sampleTrack))
+            LibraryView()
                 .tabItem {
                     Image(systemName: "tv.music.note.fill")
                     Text("Library")
