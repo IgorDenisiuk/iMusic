@@ -1,0 +1,16 @@
+//
+//  UserModel.swift
+//  iMusic
+//
+//  Created by wsa-024-23b on 17.09.21.
+//
+
+import Foundation
+
+struct User: Codable {
+    var firstName  = ""
+    var lastName   = ""
+    var email      = ""
+    var birthdate  = Date()
+}
+
