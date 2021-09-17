@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RootView: View {
     
     var body: some View {
         TabView {
-            SearchView(viewModel: SongListViewModel())
+            SearchView(viewModel: TrackListViewModel())
                 .tabItem {
                     Image(systemName: "magnifyingglass.circle.fill")
                     Text("Search")
                 }
             
-            LibraryView(viewModel: SongListViewModel(), track: TrackViewModel(tracks: MockData.sampleTrack))
+            LibraryView(viewModel: TrackListViewModel(), track: TrackViewModel(tracks: MockData.sampleTrack))
                 .tabItem {
                     Image(systemName: "tv.music.note.fill")
                     Text("Library")
@@ -35,7 +35,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RootView()
     }
 }
 

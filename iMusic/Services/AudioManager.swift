@@ -8,7 +8,7 @@
 import Foundation
 import AVKit
 
-struct AudioManager {
+class AudioManager: ObservableObject {
     
     let player = AVPlayer()
 

@@ -10,11 +10,11 @@ import SwiftUI
 @main
 struct MyMusicApp: App {
 
-    var library = Library()
+    var library = LibraryViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(library)
+            RootView().environmentObject(library)
         }
     }
 }

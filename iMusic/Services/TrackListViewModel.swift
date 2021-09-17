@@ -10,7 +10,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-class SongListViewModel: ObservableObject {
+class TrackListViewModel: ObservableObject {
     @Published var searchTerm: String = ""
     @Published var tracks: [TrackViewModel] = []
     @Published var isLoading = false
@@ -62,4 +62,5 @@ class TrackViewModel: Identifiable, ObservableObject {
         self.previewUrl = tracks.previewUrl
     }
 }
+
 

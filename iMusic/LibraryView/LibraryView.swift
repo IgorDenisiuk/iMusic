@@ -9,15 +9,14 @@ import SwiftUI
 
 struct LibraryView: View {
     
-    
-    @State private var isShowingDetail: Bool = false
+    @EnvironmentObject var library: LibraryViewModel
+    @StateObject var viewModel = TrackListViewModel()
+    @State var track = TrackViewModel(tracks: MockData.sampleTrack)
     @State var selectedTrack: TrackViewModel?
-    @ObservedObject var viewModel: SongListViewModel
-    @State var track: TrackViewModel
-    private let player = AudioManager()
-    @EnvironmentObject var library: Library
+    @State private var isShowingDetail: Bool = false
     @State private var showingAlert = false
     @State private var isPlaying = false
+    private let player = AudioManager()
     
     var body: some View {
         ZStack {
@@ -103,7 +102,7 @@ struct LibraryView: View {
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView(viewModel: SongListViewModel(), track: TrackViewModel(tracks: MockData.sampleTrack))
+        LibraryView(viewModel: TrackListViewModel(), track: TrackViewModel(tracks: MockData.sampleTrack))
         
     }
 }
