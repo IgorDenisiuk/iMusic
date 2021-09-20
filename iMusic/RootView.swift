@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RootView.swift
 //  iMusic
 //
 //  Created by wsa-024-23b on 17.09.21.
@@ -33,7 +33,7 @@ struct RootView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
     }

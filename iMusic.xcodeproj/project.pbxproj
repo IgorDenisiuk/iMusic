@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		867286AC26F876B1000D1786 /* PlayNextPreviousButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867286AB26F876B1000D1786 /* PlayNextPreviousButtons.swift */; };
 		86F41AD826F496BC0077969E /* iMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F41AD726F496BC0077969E /* iMusicApp.swift */; };
 		86F41ADA26F496BC0077969E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F41AD926F496BC0077969E /* RootView.swift */; };
 		86F41ADC26F496BC0077969E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F41ADB26F496BC0077969E /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		867286AB26F876B1000D1786 /* PlayNextPreviousButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayNextPreviousButtons.swift; sourceTree = "<group>"; };
 		86F41AD426F496BC0077969E /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F41AD726F496BC0077969E /* iMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMusicApp.swift; sourceTree = "<group>"; };
 		86F41AD926F496BC0077969E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				86F41B1326F49E5E0077969E /* TrackNameAndTrackArtist.swift */,
 				86F41B1526F49E750077969E /* AddToLibraryButton.swift */,
 				86F41B1726F49E880077969E /* VolumeSlider.swift */,
+				867286AB26F876B1000D1786 /* PlayNextPreviousButtons.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				86F41AFB26F498AA0077969E /* LibraryView.swift in Sources */,
 				86F41B0826F499950077969E /* SearchView.swift in Sources */,
 				86F41AF826F498710077969E /* Alert.swift in Sources */,
+				867286AC26F876B1000D1786 /* PlayNextPreviousButtons.swift in Sources */,
 				86F41B1026F49E320077969E /* TrackCell.swift in Sources */,
 				86F41B0026F498FD0077969E /* AccountViewModel.swift in Sources */,
 				86F41AE826F497690077969E /* DataModel.swift in Sources */,

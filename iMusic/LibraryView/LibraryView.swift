@@ -10,13 +10,8 @@ import SwiftUI
 struct LibraryView: View {
     
     @EnvironmentObject var library: LibraryViewModel
-    @StateObject var viewModel = TrackListViewModel()
-    @State var track = TrackViewModel(tracks: MockData.sampleTrack)
     @State var selectedTrack: TrackViewModel?
-    @State private var isShowingDetail: Bool = false
-    @State private var showingAlert = false
-    @State private var isPlaying = false
-    private let player = AudioManager()
+    @State var player = AudioManager()
     
     var body: some View {
         ZStack {
@@ -32,56 +27,10 @@ struct LibraryView: View {
                         }
                         .onDelete(perform: delete)
                         .onMove(perform: move)
-                        
                     }
                     
-                    HStack {
-                        Button {
-                            print("play previous")
-                        } label: {
-                            Image(systemName: "backward.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 15)
-                                .foregroundColor(.white)
-                        }
-                        
-                        Spacer()
-                        
-                        Button {
-                            if self.library.items.isEmpty {
-                                showingAlert = true
-                            } else {
-                                player.playPauseTrack(previewUrl: selectedTrack?.previewUrl)
-                            }
-                            print("play play/pause")
-                        } label: {
-                            Image(systemName: "playpause.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 30)
-                                .foregroundColor(.white)
-                        }.alert(isPresented: $showingAlert, content: {
-                            Alert(title: Text("Choose tracks in Search Bar"), dismissButton: .none)
-                        })
-                        
-                        Spacer()
-                        
-                        Button {
-                            print("play next")
-                        } label: {
-                            Image(systemName: "forward.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 15)
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity, maxHeight: 50)
-                    .background(Color("brandColor"))
-                    .cornerRadius(12)
-                    .padding()
+                    PlayNextPreviousButtons(selectedTrack: $selectedTrack)
+                    
                 }
                 .listStyle(PlainListStyle())
                 .navigationTitle("Library")
@@ -102,7 +51,6 @@ struct LibraryView: View {
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView(viewModel: TrackListViewModel(), track: TrackViewModel(tracks: MockData.sampleTrack))
-        
+        LibraryView()
     }
 }
