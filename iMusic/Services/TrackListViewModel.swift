@@ -16,7 +16,7 @@ class TrackListViewModel: ObservableObject {
     @Published var isLoading = false
     
     private let dataModel: DataModel = DataModel()
-    private let artworkLoader: ArtworkLoader = ArtworkLoader()
+    private let artworkLoader: ImageLoader = ImageLoader()
     private var disposables = Set<AnyCancellable>()
     
     init() {
@@ -47,20 +47,3 @@ class TrackListViewModel: ObservableObject {
         }
     }
 }
-
-class TrackViewModel: Identifiable, ObservableObject {
-    let id: Int
-    let trackName: String
-    let artistName: String
-    let previewUrl: String?
-    @Published var artwork: Image?
-    
-    init(tracks: Track) {
-        self.id = tracks.trackId
-        self.trackName = tracks.trackName
-        self.artistName = tracks.artistName
-        self.previewUrl = tracks.previewUrl
-    }
-}
-
-

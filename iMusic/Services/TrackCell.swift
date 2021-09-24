@@ -14,6 +14,10 @@ struct TrackCell: View {
     var body: some View {
         HStack {
             ArtworkView(image: song.artwork)
+                .frame(width: 60, height: 60)
+                .shadow(radius: 5)
+                .cornerRadius(5)
+                .padding(.trailing, 5)
             
             VStack(alignment: .leading) {
                 Text(song.trackName)

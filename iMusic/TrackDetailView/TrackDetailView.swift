@@ -10,6 +10,7 @@ import SwiftUI
 struct TrackDetailView: View {
     
     @EnvironmentObject var library: LibraryViewModel
+    @ObservedObject var image = ImageLoader()
     @State var player = AudioManager()
     @State var track: TrackViewModel
     @State var volumeSlider: Double
@@ -21,7 +22,7 @@ struct TrackDetailView: View {
             xMarkButton(isShowingDetail: $isShowingDetail)
             
             ArtworkView(image: track.artwork)
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .frame(width: 200, height: 200, alignment: .center)
                 .cornerRadius(10)
             

@@ -17,7 +17,11 @@ struct PlayNextPreviousButtons: View {
     var body: some View {
         HStack {
             Button {
-                print("play previous")
+                if self.library.items.isEmpty {
+                    showingAlert = true
+                } else {
+                    print("play previous")
+                }
             } label: {
                 Image(systemName: "backward.fill")
                     .resizable()
@@ -48,7 +52,11 @@ struct PlayNextPreviousButtons: View {
             Spacer()
             
             Button {
-                print("play next")
+                if self.library.items.isEmpty {
+                    showingAlert = true
+                } else {
+                    print("play next")
+                }
             } label: {
                 Image(systemName: "forward.fill")
                     .resizable()

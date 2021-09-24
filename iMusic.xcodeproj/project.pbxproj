@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		867286AC26F876B1000D1786 /* PlayNextPreviousButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867286AB26F876B1000D1786 /* PlayNextPreviousButtons.swift */; };
+		867286AE26F9C045000D1786 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867286AD26F9C045000D1786 /* TrackViewModel.swift */; };
 		86F41AD826F496BC0077969E /* iMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F41AD726F496BC0077969E /* iMusicApp.swift */; };
 		86F41ADA26F496BC0077969E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F41AD926F496BC0077969E /* RootView.swift */; };
 		86F41ADC26F496BC0077969E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F41ADB26F496BC0077969E /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		867286AB26F876B1000D1786 /* PlayNextPreviousButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayNextPreviousButtons.swift; sourceTree = "<group>"; };
+		867286AD26F9C045000D1786 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		86F41AD426F496BC0077969E /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F41AD726F496BC0077969E /* iMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMusicApp.swift; sourceTree = "<group>"; };
 		86F41AD926F496BC0077969E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -131,20 +133,21 @@
 		86F41AEB26F497A50077969E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				86F41AED26F497DD0077969E /* String+Ext.swift */,
 				86F41AEF26F498030077969E /* TrackListViewModel.swift */,
+				867286AD26F9C045000D1786 /* TrackViewModel.swift */,
+				86F41B0F26F49E320077969E /* TrackCell.swift */,
 				86F41AF326F4983D0077969E /* AudioManager.swift */,
 				86F41AF526F498550077969E /* ImageLoader.swift */,
 				86F41AF726F498710077969E /* Alert.swift */,
 				86F41B0926F49DEF0077969E /* SearchBar.swift */,
 				86F41B0B26F49E070077969E /* EmptyStateView.swift */,
 				86F41B0D26F49E1E0077969E /* ArtworkView.swift */,
-				86F41B0F26F49E320077969E /* TrackCell.swift */,
 				86F41B1126F49E4A0077969E /* xMarkButton.swift */,
 				86F41B1326F49E5E0077969E /* TrackNameAndTrackArtist.swift */,
 				86F41B1526F49E750077969E /* AddToLibraryButton.swift */,
 				86F41B1726F49E880077969E /* VolumeSlider.swift */,
 				867286AB26F876B1000D1786 /* PlayNextPreviousButtons.swift */,
+				86F41AED26F497DD0077969E /* String+Ext.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F41ADA26F496BC0077969E /* RootView.swift in Sources */,
+				867286AE26F9C045000D1786 /* TrackViewModel.swift in Sources */,
 				86F41AD826F496BC0077969E /* iMusicApp.swift in Sources */,
 				86F41B1626F49E750077969E /* AddToLibraryButton.swift in Sources */,
 				86F41B1426F49E5E0077969E /* TrackNameAndTrackArtist.swift in Sources */,

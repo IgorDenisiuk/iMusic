@@ -13,7 +13,8 @@ struct ArtworkView: View {
     var body: some View {
         ZStack {
             if image != nil {
-                image
+                image!
+                    .resizable()
             } else {
                 Color(.systemGray)
                 Image(systemName: "music.note")
@@ -21,9 +22,7 @@ struct ArtworkView: View {
                     .foregroundColor(.white)
             }
         }
-        .frame(width: 50, height: 50)
-        .shadow(radius: 5)
-        .padding(.trailing, 5)
+        
     }
 }
 
