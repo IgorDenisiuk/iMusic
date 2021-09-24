@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TrackDetailView: View {
     
-    @EnvironmentObject var library: Library
+    @EnvironmentObject var library: LibraryViewModel
+    @ObservedObject var image = ImageLoader()
     @State var player = AudioManager()
     @State var track: TrackViewModel
     @State var volumeSlider: Double
@@ -17,76 +18,21 @@ struct TrackDetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Button {
-                    isShowingDetail = false
-                } label: {
-                    ZStack {
-                        Circle()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
-                            .opacity(0.6)
-                        
-                        Image(systemName: "xmark")
-                            .imageScale(.small)
-                            .frame(width: 44, height: 44)
-                            .foregroundColor(.black)
-                    }
-                }
-                .padding()
-            }
             
+            xMarkButton(isShowingDetail: $isShowingDetail)
             
             ArtworkView(image: track.artwork)
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .frame(width: 200, height: 200, alignment: .center)
                 .cornerRadius(10)
             
-            VStack(spacing: 10) {
-                Text(track.trackName)
-                    .fontWeight(.semibold)
-                    .font(.title)
-                    .padding()
-                
-                Text(track.artistName)
-                    .font(.title3)
-                    .foregroundColor(.secondary)
-            }
-            .multilineTextAlignment(.center)
+            TrackNameAndTrackArtist(track: track)
             
             Spacer()
             
-            HStack {
-                Image(systemName: "speaker.fill")
-                    .foregroundColor(.secondary)
-                
-                Slider(value: $volumeSlider) {_ in
-                    player.volume(volumeSlider: volumeSlider)
-                }
-                    .accentColor(Color("brandColor"))
-                
-                Image(systemName: "speaker.wave.3.fill")
-                    .foregroundColor(.secondary)
-            }
-            .padding()
-            .padding(.vertical, 15)
+            VolumeSlider(player: player.self, volumeSlider: 1.0)
             
-           Button {
-                library.items.append(track)
-                isShowingDetail = false
-            } label: {
-                Text("Add Track to Library")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, maxHeight: 50)
-                    .background(Color("brandColor"))
-                    .cornerRadius(12)
-            }
-            .padding()
-            .padding(.vertical, 5)
-            
+            AddToLibraryButton(track: track, isShowingDetail: $isShowingDetail)
         }
         .onAppear {
             player.playPauseTrack(previewUrl: track.previewUrl)
@@ -98,7 +44,6 @@ struct TrackDetailView: View {
     }
 }
 
-
 struct TrackDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TrackDetailView(track: TrackViewModel(tracks: MockData.sampleTrack),
@@ -106,4 +51,3 @@ struct TrackDetailView_Previews: PreviewProvider {
                         isShowingDetail: .constant(true))
     }
 }
-

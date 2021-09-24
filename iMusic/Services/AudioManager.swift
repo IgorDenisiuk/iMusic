@@ -7,9 +7,12 @@
 
 import Foundation
 import AVKit
+import SwiftUI
 
-struct AudioManager {
+class AudioManager: ObservableObject {
     
+    @EnvironmentObject var library: LibraryViewModel
+    @State var track = TrackViewModel(tracks: MockData.sampleTrack)
     let player = AVPlayer()
 
     func playPauseTrack(previewUrl: String?) {

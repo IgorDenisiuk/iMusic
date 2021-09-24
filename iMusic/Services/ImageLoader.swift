@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ArtworkLoader: ObservableObject {
+class ImageLoader: ObservableObject {
     private var dataTasks: [URLSessionDataTask] = []
     
     func loadArtwork(forSong song: Track, completion: @escaping((Image?) -> Void)) {

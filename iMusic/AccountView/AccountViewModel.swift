@@ -11,7 +11,7 @@ final class AccountViewModel: ObservableObject {
     
     @AppStorage("user") private var userData: Data?
     
-    @Published var user = User()
+    @Published var user = UserModel()
     @Published var alertItem: AlertItem?
     
     func saveChages() {
@@ -30,7 +30,7 @@ final class AccountViewModel: ObservableObject {
         guard let userData = userData else { return }
         
         do {
-            user = try JSONDecoder().decode(User.self, from: userData)
+            user = try JSONDecoder().decode(UserModel.self, from: userData)
         } catch {
             alertItem = AlertContext.invalidUserData
         }
